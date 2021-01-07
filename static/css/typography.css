@@ -1,0 +1,100 @@
+
+/*  Homepage   */
+/* *********** */
+
+/* Read more */
+
+.post-entry .post-read-more {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  color: rgb(64, 64, 64, 0.4);
+  font-weight: 900;
+  font-style: normal;
+  letter-spacing: 1px;
+  line-height: 25px;
+}
+
+/* Single page      */
+/* **************** */
+.blog-post h1 {
+  font-size: 2.6em;
+}
+
+.blog-post h2 {
+  font-size: 1.6em;
+}
+
+blockquote {
+  border-left: 5px solid #eee;
+  padding: 10px 20px;
+  margin: 0 0 20px;
+}
+
+figcaption {
+    display: flex;
+    justify-content: center;
+}
+
+/* Footnote links */
+
+a[href^="#fnref:"] {
+    text-decoration: none;
+    color: #c7254e;
+    font-family: monospace;
+    font-weight: 900;
+  }
+  a[href^="#fn:"]:before {
+    content: "(";
+  }
+  a[href^="#fn:"]:after {
+    content: ")";
+  }
+  a[href^="#fn:"] {
+    text-decoration: none;
+    vertical-align: baseline;
+    position: relative;
+    top: -0.1em;
+    margin-left: 0.3em;
+    font-size: 75%;
+  }
+
+
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #eee;
+}
+
+p {
+  word-wrap: break-word;
+}
+
+pre {
+  overflow: auto;
+  word-break: break-all;
+  word-wrap: break-word;
+  color: #f8f8f2;
+  background-color: #252525;
+  margin-bottom: 1.5em;
+  margin-top: 0.8em;
+  padding: 1.4em;
+}
+
+code {
+  overflow-x: scroll;
+  word-wrap: break-word;
+  font-size: 0.8em;
+  color: #f8f8f2;
+  background-color: #252525;
+  padding: 4px 10px;
+  margin-right: 4px;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: 100%;
+}
