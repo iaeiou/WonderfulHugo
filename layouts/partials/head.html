@@ -46,12 +46,18 @@
   <link rel="alternate" href="{{ "index.xml" | absLangURL }}" type="application/rss+xml" title="{{ .Site.Title }}">
 
   {{- if .Site.Params.selfHosted -}}
-  <link rel="stylesheet" href="{{ "css/katex.min.css" | absURL }}" />
-  <link rel="stylesheet" href="{{ "fontawesome/css/all.css" | absURL }}" />
-  <link rel="stylesheet" href="{{ "css/bootstrap.min.css" | absURL }}" />
-  <link rel="stylesheet" href="{{ "css/fonts.css" | absURL }}" />
-  <link rel="stylesheet" href="{{ "css/photoswipe.min.css" | absURL }}" />
-  <link rel="stylesheet" href="{{ "css/photoswipe.default-skin.min.css" | absURL }}" />
+
+  {{ $katexCss := resources.Get "scss/katex.min.scss" | resources.ToCSS  }}
+  {{ $fontawesomeCss := resources.Get "scss/fontawesome.scss" | resources.ToCSS  }}
+  {{ $bootstrapCss := resources.Get "scss/bootstrap.min.scss" | resources.ToCSS  }}
+  {{ $fontsCss := resources.Get "scss/fonts.scss" | resources.ToCSS  }}
+  {{ $photoswipeCss := resources.Get "scss/photoswipe.min.scss" | resources.ToCSS  }}
+  {{ $photoswipeSkinCss := resources.Get "scss/photoswipe.default-skin.min.scss" | resources.ToCSS  }}
+
+  {{ $BundleCss := slice $katexCss $fontawesomeCss $bootstrapCss $fontsCss $photoswipeCss $photoswipeSkinCss | resources.Concat  "css/bundle.css" }}
+  {{ $MiniCSS := $BundleCss | resources.ToCSS | minify | fingerprint}}
+  <link rel="stylesheet" href="{{ $MiniCSS.Permalink }}">
+
   {{- else -}}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
