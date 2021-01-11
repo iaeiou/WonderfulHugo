@@ -49,7 +49,7 @@
   <link rel="stylesheet" href="{{ "css/katex.min.css" | absURL }}" />
 
   {{ $FontAwesomeScss := resources.Get "scss/fontawesome.scss" }}
-  {{ $FontAwesomeCss := $FontAwesomeScss | resources.ToCSS (dict "targetPath" "/css/test.css" "enableSourceMap" true) }}
+  {{ $FontAwesomeCss := $FontAwesomeScss | resources.ToCSS (dict "targetPath" "/css/fontawesome.css" "enableSourceMap" true) }}
   <link rel="stylesheet" href="{{ $FontAwesomeCss.Permalink }}">
 
   <link rel="stylesheet" href="{{ "css/bootstrap.min.css" | absURL }}" />
