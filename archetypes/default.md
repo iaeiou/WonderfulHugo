@@ -1,9 +1,17 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
+subtitle: ""
+description: ""
+keywords: ""
 author: ""
 type: ""
 date: {{ .Date }}
-subtitle: ""
 image: ""
-tags: []
+draft: true
+tags :
+    - 
+url:
 ---
+
+
+<!--more-->
